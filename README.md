@@ -19,6 +19,10 @@ git clone https://github.com/Jiaoyang45/Rolling-Unet
 cd Rolling-Unet
 ```
 
+- In the paper, for the BUSI, GlaS, and CHASEDB1 datasets, we performed three random splits using the "train_test_split" function, with corresponding random seeds of 41, 1029, and 3407, respectively. ISIC 2018 dataset only performed random split once, with a corresponding seed of 41. To ensure the reproducibility of the experiment, we strictly set the random seeds for functions such as Torch, Python, and Numpy to 1029 using the "seed_torch" function.
+
+- For the CHASEDB1 DATASET, The "test_size" of "train_test_split" is not 0.2, but 0.27, which makes the training set exactly 20 images, which is a multiple of batch_size, in order to fully utilize the data for learning.
+
 
 ### Datasets
 1) ISIC 2018 - [Link](https://challenge.isic-archive.com/data/)
